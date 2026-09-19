@@ -2,6 +2,21 @@
 
 This fixes Citrix Workspace on current Arch-based Omarchy installations when Workspace opens and immediately exits, or does not open at all.
 
+## Prerequisite: Citrix Workspace
+
+Download the official Linux x64 tarball from [Citrix Workspace app for Linux](https://www.citrix.com/downloads/workspace-app/linux/workspace-app-for-linux-latest.html).
+
+Choose the Linux x64 `.tar.gz` package. After downloading it, extract and install Citrix before applying this fix:
+
+```bash
+cd ~/Downloads
+tar -xzf linuxx64-*.tar.gz
+cd linuxx64/linuxx64.cor
+sudo ./setupwfc
+```
+
+The exact filename and extracted directory may differ between Citrix releases. The installer should place Citrix at `/opt/Citrix/ICAClient`.
+
 ## TL;DR
 
 On a working machine, create the compatibility bundle:
