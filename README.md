@@ -2,6 +2,29 @@
 
 This fixes Citrix Workspace on current Arch-based Omarchy installations when Workspace opens and immediately exits, or does not open at all.
 
+## TL;DR
+
+On a working machine, create the compatibility bundle:
+
+```bash
+git clone https://github.com/jamesmcconville/omarchy-citrix-workspace-fix.git
+cd omarchy-citrix-workspace-fix
+chmod +x citrix-workspace-compat.sh
+./citrix-workspace-compat.sh export citrix-compat.tar.gz
+tar -czf citrix-workspace-fix.tar.gz \
+  citrix-workspace-compat.sh install.sh README.md citrix-compat.tar.gz
+```
+
+Copy `citrix-workspace-fix.tar.gz` to the broken machine, where the same Citrix version is installed:
+
+```bash
+tar -xzf citrix-workspace-fix.tar.gz
+chmod +x install.sh
+./install.sh
+```
+
+Launch **Citrix Workspace** from the application menu.
+
 ## What This Fixes
 
 The affected Citrix build expects libraries that are no longer installed by current Arch packages:
